@@ -1,0 +1,55 @@
+Step: build-step-credential-initializer:
+
+{"level":"warn","ts":1549469026.559424,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1549469026.5598927,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-source:
+
+{"level":"warn","ts":1549469029.0282297,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1549469030.2987916,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/jstrachan/mynodething\" @ \"master\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-setup-jx-git-credentials:
+
+Generated Git credentials file /home/jenkins/git/credentials
+Step: build-step-setversion-step3:
+
+Step: build-step-build-step4:
+
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Using helmBinary helm with feature flag: template-mode
+Initialising Helm 'init --client-only'
+Adding missing Helm repo: jenkins-x http://chartmuseum.jenkins-x.io
+Successfully added Helm repository jenkins-x.
+Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository releases.
+Step: build-step-build-step5:
+
+Tag v1.1.23 created and pushed to remote origin
+Step: build-step-promote-step6:
+
+Converted /workspace/source/charts/mynodething to an unshallow repository
+Generating change log from git ref v1.0.0 => 5551a2831c6371ce41dbf2515677f3d7cb1871ab
+Failed to enrich commits with issues: User.jenkins.io "" is invalid: metadata.name: Required value: name or generateName is required
+Failed to enrich commits with issues: User.jenkins.io "" is invalid: metadata.name: Required value: name or generateName is required
+Finding issues in commit messages using git format
+No release found for jstrachan/mynodething and tag v1.1.23 so creating a new release
+Updated the release information at https://github.com/jstrachan/mynodething/releases/tag/v1.1.23
+generated: /workspace/source/charts/mynodething/templates/release.yaml
+Created Release mynodething-1-1-23 resource in namespace jx
+Updating PipelineActivity jstrachan-mynodething-master-2 with version 1.1.23
+Updated PipelineActivities jstrachan-mynodething-master-2 with release notes URL: https://github.com/jstrachan/mynodething/releases/tag/v1.1.23
+Step: build-step-promote-step7:
+
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file mynodething-1.1.23.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+Step: build-step-promote-step8:
+
+prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/jx/issues/2410
+Promoting app mynodething version 1.1.23 to namespace jx-staging
+Created Pull Request: https://github.com/jstrachan/environment-jstrachan-prow3-staging/pull/3
+
+Pull Request https://github.com/jstrachan/environment-jstrachan-prow3-staging/pull/3 is merged at sha 2ab8994b86427b4b8f34913bc2a814f0fcb79f96
+Pull Request merged but we are not waiting for the update pipeline to complete!
+Could not find the service URL in namespace jx-staging for names mynodething, jx-mynodething, jx-staging-mynodething
